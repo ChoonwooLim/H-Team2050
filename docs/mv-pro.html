@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>F-TEAM 2050 | MUSIC VIDEO</title>
+    <link rel="stylesheet" href="mv-pro.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+KR:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-ring"></div>
+            <div class="loader-text">
+                <span class="glitch" data-text="F-TEAM 2050">F-TEAM 2050</span>
+                <p id="load-progress">LOADING ASSETS... 0%</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Player -->
+    <div id="mv-player">
+        <!-- Background Layer -->
+        <div id="bg-layer"></div>
+
+        <!-- Video Layer -->
+        <div id="video-layer">
+            <video id="video-bg" muted loop playsinline></video>
+        </div>
+
+        <!-- Character Layer -->
+        <div id="char-layer"></div>
+
+        <!-- VFX Layer -->
+        <div id="vfx-layer">
+            <div id="glitch-overlay"></div>
+            <div id="chromatic-overlay"></div>
+            <div id="flash-overlay"></div>
+            <div id="scanlines"></div>
+            <div id="vignette"></div>
+            <div id="rain-overlay"></div>
+            <div id="particles"></div>
+            <div id="energy-lines"></div>
+        </div>
+
+        <!-- Text Layer -->
+        <div id="text-layer">
+            <h1 id="main-title"></h1>
+            <p id="subtitle"></p>
+        </div>
+
+        <!-- Audio Visualizer -->
+        <canvas id="visualizer"></canvas>
+
+        <!-- Controls -->
+        <div id="controls">
+            <button id="play-btn" class="neon-btn">
+                <span class="btn-icon">▶</span>
+                <span class="btn-text">PLAY</span>
+            </button>
+            <div id="timeline">
+                <div id="timeline-progress"></div>
+                <div id="timeline-handle"></div>
+            </div>
+            <div id="time-display">
+                <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+            </div>
+            <button id="fullscreen-btn" class="neon-btn">⛶</button>
+            <button id="exit-btn" class="neon-btn" onclick="location.href='index.html'">✕</button>
+        </div>
+
+        <!-- Scene Indicator -->
+        <div id="scene-indicator">
+            <span id="scene-name">INTRO</span>
+        </div>
+    </div>
+
+    <audio id="audio" preload="auto">
+        <source src="assets/audio/F-Team 2050.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="mv-pro.js"></script>
+</body>
+
+</html>

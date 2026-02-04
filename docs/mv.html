@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-TEAM 2050 | MUSIC VIDEO</title>
+    <link rel="stylesheet" href="mv.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+KR:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>LOADING DATA...</p>
+        </div>
+    </div>
+
+    <div id="player-container">
+        <canvas id="visualizer"></canvas>
+        <div id="image-layer"></div>
+        <div id="overlay-layer">
+            <h2 id="lyric-text"></h2>
+            <div id="glitch-overlay"></div>
+        </div>
+
+        <div id="controls">
+            <button id="play-btn">PLAY MV</button>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <button id="home-btn" onclick="location.href='index.html'">EXIT</button>
+        </div>
+    </div>
+
+    <audio id="mv-audio">
+        <source src="assets/audio/F-Team 2050.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="mv.js"></script>
+</body>
+
+</html>

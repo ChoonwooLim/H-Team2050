@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-TEAM 2050 | Video Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00f3ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .video-card video {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-info h3 {
+            font-size: 0.9rem;
+            color: #00f3ff;
+            margin-bottom: 5px;
+            word-break: break-all;
+        }
+
+        .video-info p {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .video-info button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #00f3ff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .video-info button:hover {
+            background: #ff00ff;
+            color: white;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #00f3ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-btn">← Back to Main</a>
+    <h1>🎬 Video Assets Preview</h1>
+    <p style="text-align:center; margin-bottom:20px; color:#888;">Click on videos to preview. These can be integrated
+        into the MV.</p>
+
+    <div class="video-grid" id="videoGrid"></div>
+
+    <script>
+        const videos = [
+            'grok-video-33419844-0b70-4637-800b-dd92ad9e9875.mp4',
+            'grok-video-488e430b-da3a-49ba-85e9-f7bcfa1369e4 (2).mp4',
+            'grok-video-488e430b-da3a-49ba-85e9-f7bcfa1369e4.mp4',
+            'grok-video-4cf2b268-b659-4abd-a1a5-c469425e54e9.mp4',
+            'grok-video-571cc656-ab04-4702-b1a6-cfe13eeff0a4.mp4',
+            'grok-video-6d91df41-010d-4ef3-97f5-6491cd4ff134.mp4',
+            'grok-video-ac1c269f-bc01-4052-9bce-9227137b521c.mp4',
+            'grok-video-aca3ad70-c768-490b-aa0a-83622106da29.mp4',
+            'grok-video-b5133ecb-1bb1-4e8c-b7c5-245d2681a35c.mp4',
+            'grok-video-cbea9c6e-2f14-4ffb-9611-2457ac2d5f9d.mp4',
+            'grok-video-cc3f708f-6da8-4906-8939-5b5f84e56f25.mp4',
+            'grok-video-d89b5083-937e-4a12-8236-8d248700d71d.mp4',
+            'grok-video-da28838b-06ec-4886-a9e2-b847978cadda.mp4',
+            'grok-video-dcdc1c97-2546-42ef-917a-5d7dc2dd1128.mp4',
+            'grok-video-ee02feea-a264-44c5-b285-6f1d3967ae41.mp4'
+        ];
+
+        const grid = document.getElementById('videoGrid');
+
+        videos.forEach((vid, i) => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            card.innerHTML = `
+                <video src="assets/videos/${vid}" muted loop preload="metadata"></video>
+                <div class="video-info">
+                    <h3>Video ${i + 1}</h3>
+                    <p>${vid.substring(0, 30)}...</p>
+                    <button onclick="togglePlay(this)">▶ Play</button>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        function togglePlay(btn) {
+            const video = btn.closest('.video-card').querySelector('video');
+            if (video.paused) {
+                video.play();
+                btn.textContent = '⏸ Pause';
+            } else {
+                video.pause();
+                btn.textContent = '▶ Play';
+            }
+        }
+    </script>
+</body>
+
+</html>

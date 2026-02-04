@@ -1,0 +1,255 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-green: #00ff9d;
+    --bg-dark: #0a0a0a;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+
+.loader {
+    text-align: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--neon-blue);
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#player-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#image-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.mv-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.mv-image.active {
+    opacity: 1;
+}
+
+/* Ken Burns Effects */
+@keyframes kenburns-pan-right {
+    0% {
+        transform: scale(1.1) translate(-2%, 0);
+    }
+
+    100% {
+        transform: scale(1.2) translate(2%, 0);
+    }
+}
+
+@keyframes kenburns-zoom-in {
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes kenburns-zoom-out {
+    0% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.fx-pan-right {
+    animation: kenburns-pan-right 5s linear forwards;
+}
+
+.fx-zoom-in {
+    animation: kenburns-zoom-in 5s linear forwards;
+}
+
+.fx-zoom-out {
+    animation: kenburns-zoom-out 5s linear forwards;
+}
+
+#overlay-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#glitch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 3;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+.glitch-anim {
+    animation: glitch-flash 0.2s linear infinite;
+}
+
+@keyframes glitch-flash {
+    0% {
+        background-color: rgba(255, 0, 255, 0.1);
+        transform: translate(2px, -2px);
+    }
+
+    25% {
+        background-color: rgba(0, 255, 255, 0.1);
+        transform: translate(-2px, 2px);
+    }
+
+    50% {
+        background-color: rgba(0, 255, 0, 0.1);
+        transform: translate(2px, 2px);
+    }
+
+    75% {
+        background-color: rgba(255, 255, 0, 0.1);
+        transform: translate(-2px, -2px);
+    }
+
+    100% {
+        background-color: transparent;
+        transform: translate(0, 0);
+    }
+}
+
+#lyric-text {
+    font-size: 3rem;
+    text-shadow: 0 0 10px var(--neon-blue);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 20px;
+}
+
+#controls {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    gap: 20px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+button {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: var(--neon-blue);
+    color: black;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+#progress-container {
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    position: relative;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink);
+    transition: width 0.1s linear;
+}
+
+#visualizer {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+    opacity: 0.5;
+    pointer-events: none;
+}
