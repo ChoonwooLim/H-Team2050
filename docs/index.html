@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-TEAM 2050 | 공포의 외인구단</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+KR:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <audio id="bgm" loop>
+        <source src="assets/audio/F-Team 2050.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <h1>F-TEAM 2050</h1>
+            <p>외인구단, 전설의 귀환</p>
+            <button id="enter-btn">ENTER THE STADIUM</button>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="logo">F-TEAM 2050</div>
+        <nav>
+            <a href="#hero">HOME</a>
+            <a href="#story">STORY</a>
+            <a href="#characters">TEAM</a>
+            <a href="#gallery">ACTION</a>
+        </nav>
+        <div class="sound-control-wrapper">
+            <button id="sound-toggle">🔇</button>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-bg">
+            <img src="assets/images/f_team_7_member_group_25d_1770178582006.png" alt="F-Team Group" class="hero-img">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h2>HELL IS EMPTY</h2>
+            <h1>ALL THE DEVILS ARE HERE</h1>
+            <p class="subtitle">2050년, 야구는 전쟁이 되었다.</p>
+        </div>
+    </section>
+
+    <section id="story">
+        <div class="container">
+            <h2 class="section-title">THE LEGEND RETURNS</h2>
+            <div class="story-content">
+                <p>2050년 네오 서울. 고도로 발달한 기술과 야만이 공존하는 도시.</p>
+                <p>소외된 자들의 마지막 희망, <span class="highlight">외인구단</span>이 다시 깨어난다.</p>
+                <p>그들은 단지 승리를 위해 싸우지 않는다. 생존을 위해, 그리고 사랑을 위해 배트를 든다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters">
+        <div class="container">
+            <h2 class="section-title">PLAYER ROSTER</h2>
+            <div class="character-grid">
+                <!-- Oh Hye-sung -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/oh_hye_sung_no_neon_1770178896137.png" alt="Oh Hye-sung">
+                    </div>
+                    <div class="char-info">
+                        <h3>오혜성</h3>
+                        <span class="role">PITCHER / BATTER</span>
+                        <p>고독한 야수. "난 네가 기뻐하는 일이라면 뭐든지 할 수 있어."</p>
+                    </div>
+                </div>
+
+                <!-- Umji -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/umji_25d_1770177205903.png" alt="Choi Umji">
+                    </div>
+                    <div class="char-info">
+                        <h3>최엄지</h3>
+                        <span class="role">MANAGER</span>
+                        <p>팀의 정신적 지주. 신비로운 힘으로 팀을 이끈다.</p>
+                    </div>
+                </div>
+
+                <!-- Ma Dong-tak -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/ma_dong_tak_25d_1770177231808.png" alt="Ma Dong-tak">
+                    </div>
+                    <div class="char-info">
+                        <h3>마동탁</h3>
+                        <span class="role">RIVAL / BATTER</span>
+                        <p>천재적인 타격감각. 화려한 스타플레이어.</p>
+                    </div>
+                </div>
+
+                <!-- Baek Du-san -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/baek_du_san_25d_1770177248468.png" alt="Baek Du-san">
+                    </div>
+                    <div class="char-info">
+                        <h3>백두산</h3>
+                        <span class="role">CATCHER</span>
+                        <p>철벽의 포수. 우직한 힘으로 홈플레이트를 지킨다.</p>
+                    </div>
+                </div>
+
+                <!-- Ha Guk-sang -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/ha_guk_sang_25d_1770177297246.png" alt="Ha Guk-sang">
+                    </div>
+                    <div class="char-info">
+                        <h3>하국상</h3>
+                        <span class="role">OUTFIELDER</span>
+                        <p>혼혈의 야생마. 놀라운 스피드와 탄력.</p>
+                    </div>
+                </div>
+
+                <!-- Jo Sang-gu -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/jo_sang_gu_25d_1770177321161.png" alt="Jo Sang-gu">
+                    </div>
+                    <div class="char-info">
+                        <h3>조상구</h3>
+                        <span class="role">PITCHER</span>
+                        <p>어둠 속의 투수. 도끼로 자신의 손가락을 찍은 독기.</p>
+                    </div>
+                </div>
+
+                <!-- Choi Gwan -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/choi_gwan_25d_1770177345305.png" alt="Choi Gwan">
+                    </div>
+                    <div class="char-info">
+                        <h3>최관</h3>
+                        <span class="role">BATTER / FIELDER</span>
+                        <p>외팔이 타자. 빗자루 배팅으로 단련된 초인적인 집중력.</p>
+                    </div>
+                </div>
+
+                <!-- Lee Do-ha -->
+                <div class="char-card" data-tilt>
+                    <div class="char-img-wrapper">
+                        <img src="assets/images/lee_do_ha_no_neon_1770180076332.png" alt="Lee Do-ha">
+                    </div>
+                    <div class="char-info">
+                        <h3>이도하</h3>
+                        <span class="role">SECOND BASEMAN</span>
+                        <p>작지만 빠른 발. 그라운드를 누비는 날다람쥐.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">IN ACTION</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="assets/images/oh_hye_sung_pose_25d_1770178320556.png" loading="lazy"
+                        alt="Hye-sung Action"></div>
+                <div class="gallery-item"><img src="assets/images/ma_dong_tak_pose_25d_1770178340313.png" loading="lazy"
+                        alt="Dong-tak Action"></div>
+                <div class="gallery-item"><img src="assets/images/baek_du_san_pose_25d_1770178356656.png" loading="lazy"
+                        alt="Du-san Action"></div>
+                <div class="gallery-item"><img src="assets/images/ha_guk_sang_pose_25d_1770178382190.png" loading="lazy"
+                        alt="Guk-sang Action"></div>
+                <div class="gallery-item"><img src="assets/images/jo_sang_gu_pose_25d_1770178399881.png" loading="lazy"
+                        alt="Sang-gu Action"></div>
+                <div class="gallery-item"><img src="assets/images/choi_gwan_pose_25d_1770178424846.png" loading="lazy"
+                        alt="Gwas Action"></div>
+                <div class="gallery-item"><img src="assets/images/lee_do_ha_pose_25d_1770178443725.png" loading="lazy"
+                        alt="Do-ha Action"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2050 F-TEAM PROJECT. Art by Gemini. Original Story by Lee Hyun-se.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
